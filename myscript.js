@@ -1,19 +1,11 @@
 var link = document.getElementById("githubfetcher").innerHTML;
 
-fetch(link).then(function (response) {
-    // The API call was successful!
+fetch('https://raw.githubusercontent.com/alexander1220/alexander1220/main/README.md').then(function (response) {
     return response.text();
 }).then(function (html) {
-
-    // Convert the HTML string into a document object
     var parser = new DOMParser();
     var doc = parser.parseFromString(html, 'text/html');
-
-    // Get the image file
-    var img = doc.querySelector('pre').innerHTML;
-    link = img;
-
+    link = doc.body.innerHTML;
 }).catch(function (err) {
-    // There was an error
     console.warn('Something went wrong.', err);
 });
