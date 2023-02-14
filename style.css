@@ -1,0 +1,12 @@
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#maincontent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#maincontent md-block{
+    width: 650px;
+}
